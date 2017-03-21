@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 // Pages:
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
-import { NotesPage } from '../pages/notes/notes';
+import { NotesPage } from '../pages/notes-page/notes-page';
 import { ProfilePage } from '../pages/profile/profile';
 import { SharesPage } from '../pages/shares/shares';
 

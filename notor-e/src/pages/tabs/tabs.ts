@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 // import { ContactPage } from '../contact/contact';
 
 
-import { NotesPage } from '../notes/notes';
+import { NotesPage } from '../notes-page/notes-page';
 import { ProfilePage } from '../profile/profile';
 import { SharesPage } from '../shares/shares';
 
@@ -20,8 +20,8 @@ export class TabsPage {
   //tab2Root: any = AboutPage;
   //tab3Root: any = ContactPage;
 
-  tab4Root: any = ProfilePage;
-  tab5Root: any = NotesPage;
+  tab4Root: any = NotesPage;
+  tab5Root: any = ProfilePage;
   tab6Root: any = SharesPage;
 
   constructor() {

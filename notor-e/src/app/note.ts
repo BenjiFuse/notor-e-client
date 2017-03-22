@@ -4,6 +4,8 @@ export class Note {
 	text: string;
 	archived: boolean;
 	user_id: number;
+	created_at: string;
+	updated_at: string;
 
 	constructor (options?: {_id: number; text: string; archived: boolean; user_id: number;}) {
 		if (options) {

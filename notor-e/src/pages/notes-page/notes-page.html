@@ -26,23 +26,23 @@
  <ion-content class="notes" padding>
  	<h2>Add a note</h2>
  	<ion-item no-lines>
- 		<ion-input #newNote (keyup.enter)="return;" type="text" placeholder="Add new note..."></ion-input>
- 		<button clear large item-right (click)="return;">
+ 		<ion-input #newNote (keyup.enter)="addNote(newNote.value); newNote.value=''" type="text" placeholder="Add new note..."></ion-input>
+ 		<button clear large item-right (click)="addNote(newNote.value); newNote.value=''">
  			<ion-icon name="add"> </ion-icon>
  		</button>
  	</ion-item>
  	<h2>Note List <small>Swipe a note to edit, delete, or share</small></h2>
  	<ion-list no-lines>
- 		<ion-item-sliding #slidingItem *ngFor="let note of notes.data">
+ 		<ion-item-sliding #slidingItem *ngFor="let note of notes?.data;">
  			<ion-item>
- 				<ion-checkbox (click)="return;" [checked]="note.archived"></ion-checkbox>
+ 				<ion-checkbox (click)="toggleArchived(note)" [checked]="note.archived"></ion-checkbox>
  				<ion-item text-wrap item-left [class.archived]="note.archived">
  					{{ note.text }}
  				</ion-item>
  			</ion-item>
- 			<ion-item-options (ionSwipe)="return;">
- 				<button (click)="return;">Edit</button>
- 				<button danger (click)="return;">
+ 			<ion-item-options (ionSwipe)="navToEdit(note, note.id); slidingItem.close()">
+ 				<button (click)="navToEdit(note, note.id); slidingItem.close()">Edit</button>
+ 				<button danger (click)="deleteNote(note, note.id)">
  					<ion-icon name="trash"></ion-icon>
  				</button>
  			</ion-item-options>

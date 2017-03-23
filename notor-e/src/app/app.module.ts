@@ -8,6 +8,8 @@ import { NotesPage } from '../pages/notes-page/notes-page';
 import { ProfilePage } from '../pages/profile/profile';
 import { SharesPage } from '../pages/shares/shares';
 import { NoteEditPage } from '../pages/note-edit/note-edit';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 import { AuthHttp , AuthConfig } from 'angular2-jwt';
 import { Http } from '@angular/http';
@@ -31,7 +33,9 @@ export function getAuthHttp(http) {
     ProfilePage,
     NotesPage,
     SharesPage,
-    NoteEditPage
+    NoteEditPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -43,7 +47,9 @@ export function getAuthHttp(http) {
     ProfilePage,
     NotesPage,
     SharesPage,
-    NoteEditPage
+    NoteEditPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     {

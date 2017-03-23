@@ -1,12 +1,13 @@
 // note.ts
 export class Note {
-	_id: number;
+	id: number;
 	text: string;
 	archived: boolean;
 	user_id: number;
 	created_at: string;
 	updated_at: string;
 
+	/*
 	constructor (options?: {_id: number; text: string; archived: boolean; user_id: number;}) {
 		if (options) {
 			this._id = options._id;
@@ -14,5 +15,5 @@ export class Note {
 			this.archived = options.archived;
 			this.user_id = options.user_id;
 		}
-	}
+	} */
 }

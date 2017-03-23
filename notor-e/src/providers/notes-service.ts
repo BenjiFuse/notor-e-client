@@ -22,14 +22,16 @@ export class NotesService {
   	let body = JSON.stringify({text: note, user_id: 1});		// [!] UPDATE FOR BY-USER ADD
   	let headers = new Headers({'Content-Type': 'application/json'});
 
-  	return this.http.post(this.notesUrl, body, {headers: headers})
+  	var temp = this.http.post(this.notesUrl, body, {headers: headers})
   				 	.map(res => res.json())
   				 	.catch(this.handleError);
+
+  	return temp;
   }
 
   // Update a given note
   update(note: Note) {
-  	let url = `${this.notesUrl}/${note._id}`;
+  	let url = `${this.notesUrl}/${note.id}`;
   	let body = JSON.stringify(note);
   	let headers = new Headers({'Content-Type': 'application/json'});
 
@@ -40,7 +42,7 @@ export class NotesService {
 
   // Delete a given note
   delete(note: Note) {
-  	let url = `${this.notesUrl}/${note._id}`;
+  	let url = `${this.notesUrl}/${note.id}`;
   	let headers = new Headers({'Content-Type': 'application/json'});
 
   	return this.http.delete(url, headers)

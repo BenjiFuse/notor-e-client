@@ -33,7 +33,7 @@
  	</ion-item>
  	<h2>Note List <small>Swipe a note to edit, delete, or share</small></h2>
  	<ion-list no-lines>
- 		<ion-item-sliding #slidingItem *ngFor="let note of notes?.data;">
+ 		<ion-item-sliding #slidingItem *ngFor="let note of notes?.data">
  			<ion-item>
  				<ion-checkbox (click)="toggleArchived(note)" [checked]="note.archived"></ion-checkbox>
  				<ion-item text-wrap item-left [class.archived]="note.archived">

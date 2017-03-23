@@ -12,11 +12,15 @@ import { Note } from '../../app/note';
 })
 export class NotesPage {
 
-  public notes: Note[];
+  public notes: Note[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public notesService : NotesService) {
+
     this.loadNotes();
+
+    console.log(this.notes);
+
   }
 
   loadNotes() {
@@ -24,12 +28,13 @@ export class NotesPage {
       .subscribe(notesList => {
         this.notes = notesList;
       });
+
   }
 
   addNote(note:string) {
     this.notesService.add(note)
         .subscribe(newNote => {
-          this.notes.push(newNote);  // Push adds note to notes array already loaded in view
+          this.notes.push(newNote)  // Push adds note to notes array already loaded in view
         });
   }
 
